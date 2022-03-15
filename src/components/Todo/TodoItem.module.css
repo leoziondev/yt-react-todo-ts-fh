@@ -1,0 +1,9 @@
+.li {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    background-color: #383d48;
+    font-size: 0.875rem;
+    border-radius: 5px;
+}
