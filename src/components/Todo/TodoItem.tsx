@@ -1,5 +1,4 @@
-import React, { useContext } from 'react'
-import { TodoContext } from '../../context/TodoContext'
+import { useTodos } from '../../hooks/useTodos'
 import { Todo } from '../../interfaces/interfaces'
 
 import styles from './TodoItem.module.css'
@@ -9,15 +8,11 @@ interface Props {
 }
 
 export const TodoItem = ({ todo }: Props) => {
-    const { toggleTodo } = useContext(TodoContext)
-
-    const handleClick = () => {
-        toggleTodo(todo.id)
-    }
+    const { toggleTodo } = useTodos()
 
     return (
         <li
-            onClick={ handleClick }
+            onClick={ () => toggleTodo(todo.id) }
             className={styles.li}
             style={{
                 textDecoration: todo.completed ? 'line-Through' : '',
