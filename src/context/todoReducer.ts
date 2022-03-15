@@ -5,7 +5,7 @@ type TodoAction =
     | { type: 'toggleTodo', payload: { id: string } }
 
 export const todoReducer = (state: TodoState, action: TodoAction): TodoState => {
-    console.log({action})
+
     switch (action.type) {
         case 'addTodo':
             return {
